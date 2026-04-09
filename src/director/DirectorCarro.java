@@ -1,43 +1,44 @@
 package director;
 
-import builder.CarroBasicoBuilder;
-import builder.CarroCompletoBuilder;
-import builder.CarroEsportivoBuilder;
+import builder.CarroBuilder;
 import model.Carro;
 
 public class DirectorCarro {
 
-    public Carro ConstruirCarroBasico(CarroBasicoBuilder builder){
+    private CarroBuilder builder;
 
-        builder.reset();
-        builder.atribuirMotor();
-        builder.atribuirCor();
-        builder.atribuirQuantidadeDePortas();
-        builder.atribuirArCondicionado();
-        builder.atribuirAirbag();
-        return builder.getCarro();
+    public DirectorCarro(CarroBuilder builder) {
+        this.builder = builder;
     }
 
-    public Carro ConstruirCarroEsportivo(@org.jetbrains.annotations.UnknownNullability CarroEsportivoBuilder builder){
+    public void construirCarroBasico(){
 
         builder.reset();
-        builder.atribuirMotor();
-        builder.atribuirCor();
-        builder.atribuirQuantidadeDePortas();
-        builder.atribuirArCondicionado();
-        builder.atribuirAirbag();
-        return builder.getCarro();
+        builder.atribuirMotor("1.0");
+        builder.atribuirCor("Sortido");
+        builder.atribuirQuantidadeDePortas("Duas");
+        builder.atribuirArCondicionado("Sem ar-condicionado");
+        builder.atribuirAirbag("Airbag básico");
     }
 
-    public Carro ConstruirCarroCompleto(@org.jetbrains.annotations.UnknownNullability CarroCompletoBuilder builder){
+    public void construirCarroEsportivo(){
 
         builder.reset();
-        builder.atribuirMotor();
-        builder.atribuirCor();
-        builder.atribuirQuantidadeDePortas();
-        builder.atribuirArCondicionado();
-        builder.atribuirAirbag();
-        return builder.getCarro();
+        builder.atribuirMotor("4.0");
+        builder.atribuirCor("Vermelho");
+        builder.atribuirQuantidadeDePortas("Quatro");
+        builder.atribuirArCondicionado("Ar-condicionado Potente");
+        builder.atribuirAirbag("Airbag Potente");
+    }
+
+    public void construirCarroCompleto(){
+
+        builder.reset();
+        builder.atribuirMotor("3.0");
+        builder.atribuirCor("Preto");
+        builder.atribuirQuantidadeDePortas("Seis");
+        builder.atribuirArCondicionado("Ar-condicionado Potente");
+        builder.atribuirAirbag("Airbag Potente");
     }
 
 }

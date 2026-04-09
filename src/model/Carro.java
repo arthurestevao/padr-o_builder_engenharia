@@ -9,9 +9,6 @@ public class Carro {
     private String airbag;
 
 
-    
-
-
     public String getAirbag() {
         return airbag;
     }
